@@ -16,9 +16,12 @@ public class AppRestaUm {
 		}
 		
 		String estados[] = new String[tabuleiro.count];
+		String estadosTabuleiro[] = new String[tabuleiro.count];
+		
 		for(int i=0; i<tabuleiro.count; i++)
 		{
 			estados[i] = tabuleiro.estados[i];
+			estadosTabuleiro[i] = tabuleiro.estadosTabuleiro[i];
  		}
 			
 		for(int i=0; i<estados.length; i++)
@@ -27,7 +30,7 @@ public class AppRestaUm {
 			System.out.println();
 		}
 		
-		return estados;
+		return estadosTabuleiro; // Nessa array de String só tem o tabuleiro
 		
 	}
 

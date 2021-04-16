@@ -7,7 +7,8 @@ public class Tabuleiro {
 	String primeiraLinha = "Tabuleiro inicial:";
 	int count = 0;
 	int maxCount = 1000;
-	String estados[] = new String[1000];
+	String estados[] = new String[1000]; // Guarda numeração, letras, soucer and targe além do tabuleiro
+	String estadosTabuleiro[] = new String[1000]; // Guarda apenas o tabuleiro
 	
 	Tabuleiro()
 	{
@@ -75,6 +76,8 @@ public class Tabuleiro {
 		if(count < maxCount)
 		{
 			String conteudo = "";
+			String conteudoTabuleiro = "";
+			
 			conteudo += primeiraLinha + "\n";
 			
 			for(int i=0; i<maxRow; i++)
@@ -82,10 +85,15 @@ public class Tabuleiro {
 				for(int j=0; j<maxCol; j++)
 				{
 					conteudo += matrix[i][j].retornaEstado();
+					if(i < maxRow - 1 && j > 0)
+					{
+						conteudoTabuleiro += matrix[i][j].retornaEstado();
+					}
 				}
 			}
 			
 			estados[count] = conteudo;
+			estadosTabuleiro[count] = conteudoTabuleiro;
 			
 			count += 1;			
 		}
