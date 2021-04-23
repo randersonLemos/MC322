@@ -17,7 +17,7 @@ public class Peca {
 		return cor;
 	}
 	
-	boolean movimentaPeca(String trajeto)
+	boolean movimentaPeca(String trajeto, int linF, int colF)
 	{
 		System.out.println("movimentaPeca(): Tem que implementar");
 		return true;

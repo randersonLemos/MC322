@@ -40,21 +40,30 @@ public class Tabuleiro {
 		Peca peca = matrixPeca[linI][colI];
 		Dama dama = matrixDama[linI][colI];
 		
+		boolean repostaPeca = false;
+		boolean respotaDama = false;
 		if(peca != null)
 		{
-			peca.movimentaPeca(trajeto);
+			respostaPeca = peca.movimentaPeca(trajeto, linF, colF);			
 		}
 		if(dama != null)
 		{
-			dama.movimentaDama(trajeto);
+			respostaDama = dama.movimentaDama(trajeto, linF, colF);
 		}
 		if(peca == null && dama == null)
 		{
 			System.out.println("Não há peça na posição: " + jogada);
+		}	
+		
+		if(respostaPeca)
+		{
+			System.out.println("Faz movimentação peca");
 		}
-		
-		
-		System.out.println(colI + " " + linI + " " + colF + " " + linF + " " + trajeto);
+		if(respotaDama)
+		{
+			System.out.println("Faz movimentação dama");
+		}		
+		//System.out.println(colI + " " + linI + " " + colF + " " + linF + " " + trajeto);
 	}
 	
 	String fazTrajeto(int linI, int colI, int linF, int colF)
@@ -76,7 +85,7 @@ public class Tabuleiro {
 			col += colIncremento;
 			lin += linIncremento;
 			
-			System.out.println("l: " + lin + " c: " + col);
+			//System.out.println("l: " + lin + " c: " + col);
 			
 			if(col == colF)
 			{
@@ -154,18 +163,17 @@ public class Tabuleiro {
 	
 	public static void main(String[] args){		
 		CSVReader csv = new CSVReader();	
-		csv.setDataSource("./src/mc322/lab05/entrada.csv");
-		
-		String jogadas[] = csv.requestCommands();
+		csv.setDataSource("./src/mc322/lab05/entrada.csv");		
 		
 		Tabuleiro tabuleiro = new Tabuleiro();
 		
-		System.out.println(tabuleiro.estadoTabuleiro());
+		System.out.println(tabuleiro.estadoComBordasTabuleiro());
+		
+		String jogadas[] = csv.requestCommands();
 		
 		for(int i=0; i<jogadas.length; i++)
 		{
-			tabuleiro.fazJogada(jogadas[i]);;
+			tabuleiro.fazJogada(jogadas[i]);
 		}
 	}
-
 }
