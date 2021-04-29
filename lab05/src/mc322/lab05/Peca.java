@@ -20,13 +20,13 @@ public class Peca {
 	public boolean movimentaPeca(String trajeto, int linF, int colF)
 	{
 		boolean permissao = false;
-		if(trajeto.equals("b-")) 				//lance normal
+		if(trajeto.equals("b-")) 				// Lance normal
 			permissao = true;
-		else if(trajeto.equals("bp-"))			//come peça adversaria
+		else if(trajeto.equals("bp-"))			// Come peça adversaria
 			permissao = true;
-		else if(trajeto.equals("p-"))			//lance normal
+		else if(trajeto.equals("p-"))			// Lance normal
 			permissao = true;
-		else if(trajeto.equals("pb-"))			//come peça adversaria
+		else if(trajeto.equals("pb-"))			// Come peça adversaria
 			permissao = true;
 		else
 		{

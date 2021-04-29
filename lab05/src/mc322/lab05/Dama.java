@@ -1,4 +1,3 @@
-  
 package mc322.lab05;
 
 public class Dama {
@@ -21,10 +20,13 @@ public class Dama {
 	boolean movimentaDama(String trajeto, int linF, int colF)
 	{
 		boolean permissao = false;
-		
-		//olhar se ha alguma peca da mesma cor durante o caminho
-		//se ha 2 pecas adversarias consecutivas no caminho
-		//se ha 1 peca adversaria n casa final
+		if(trajeto.toLowerCase().equals("b-"))
+			permissao = true;
+		else if(trajeto.toLowerCase().equals("bp-") || trajeto.toLowerCase().equals("b-p-"))
+			permissao = true;
+		else if(trajeto.toLowerCase().equals("p-"))
+			permissao = true;
+		else if(trajeto.toLowerCase().equals("pb-") || trajeto.toLowerCase().equals("p-b-"))
 			permissao = true;
 		
 		return permissao;
