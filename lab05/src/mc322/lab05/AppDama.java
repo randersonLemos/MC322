@@ -2,28 +2,32 @@ package mc322.lab05;
 
 public class AppDama {
 
-	public static void executaJogo(String caminho_para_entrada_csv)
+	public static String[] executaJogo(String caminho_para_comandos_csv)
 	{
 		CSVReader csv = new CSVReader();	
-		csv.setDataSource("./src/mc322/lab05/entrada.csv");		
+		csv.setDataSource(caminho_para_comandos_csv);		
 		
 		Tabuleiro tabuleiro = new Tabuleiro();
 		
 		System.out.println(tabuleiro.estadoComBordasTabuleiro());
 		
 		String jogadas[] = csv.requestCommands();
-		System.out.println(jogadas.length);
-		
+		String vec[] = new String[jogadas.length+1];
+		vec[0] = tabuleiro.estadoTabuleiro();
+
 		for(int i=0; i<jogadas.length; i++)
 		{
 			tabuleiro.fazJogada(jogadas[i]);
-			System.out.println("Lance: " + (i+1));
 			System.out.println(tabuleiro.estadoComBordasTabuleiro());
+			vec[i+1] = tabuleiro.estadoTabuleiro();
 		}
+		
+		return vec;
 	}
 
-	public static void main(String[] args) {
-		executaJogo("./src/mc322/lab05/entrada.csv");	
+	public static void main(String[] args) {		
+		executaJogo("./src/mc322/lab05/comandos.csv");	
+
 	}
 
 }

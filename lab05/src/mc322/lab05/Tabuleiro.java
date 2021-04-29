@@ -53,8 +53,8 @@ public class Tabuleiro {
 			{		
 				if(peca.movimentaPeca(trajeto, linF, colF))
 				{
-					source = "source: " + jogada.charAt(0) + jogada.charAt(1);
-					target = "target: " + jogada.charAt(3) + jogada.charAt(4);
+					source = "Source: " + jogada.charAt(0) + jogada.charAt(1);
+					target = "Target: " + jogada.charAt(3) + jogada.charAt(4);
 					
 					if(trajeto.length() == 3) // Se for movimento de tomada de peca
 					{
