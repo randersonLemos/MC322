@@ -1,4 +1,4 @@
-package mc322.lab05;
+package mc322.lab05a;
 
 public class AppDama {
 
@@ -26,7 +26,7 @@ public class AppDama {
 	}
 
 	public static void main(String[] args) {		
-		executaJogo("./src/mc322/lab05/comandos.csv");	
+		executaJogo("./comandos.csv");	
 
 	}
 

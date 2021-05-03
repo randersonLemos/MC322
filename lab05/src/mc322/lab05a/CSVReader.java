@@ -1,4 +1,4 @@
-package mc322.lab05;
+package mc322.lab05a;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -17,7 +17,7 @@ public class CSVReader {
 		return dataSource;
 	 }
 
-	 public void setDataSource(String dataSource) { //recebe o local do arquivo e lê o arquivo
+	 public void setDataSource(String dataSource) { //recebe o local do arquivo e lï¿½ o arquivo
 		 this.dataSource = dataSource;
 		 if (dataSource == null) {
 		commands = null;
@@ -30,7 +30,7 @@ public class CSVReader {
 		return commands;
 	 }
 
-	private void readCSV() { //lê o arquivo
+	private void readCSV() { //lï¿½ o arquivo
 		try {
 		 	BufferedReader file = new BufferedReader(new FileReader(dataSource));
 
