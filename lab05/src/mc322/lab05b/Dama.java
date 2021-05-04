@@ -2,9 +2,9 @@ package mc322.lab05b;
 
 public class Dama extends Peca
 {
-	Dama(String cor, int lin, int col)
+	Dama(String simb, int lin, int col)
 	{
-		super(cor.toUpperCase(), lin, col);
+		super(simb.toUpperCase(), lin, col);
 		tipo = "dama";		
 	}		
 

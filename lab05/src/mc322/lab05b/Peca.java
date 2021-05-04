@@ -1,22 +1,30 @@
 package mc322.lab05b;
 
 public class Peca
-{	
-	String tipo = "";	
+{
 	String cor = "";
+	String tipo = "";	
+	String simb = "";
 	int lin = -1;
 	int col = -1;
 	
 	
-	Peca(String cor, int lin, int col)
+	Peca(String simb, int lin, int col)
 	{	
-		this.cor = cor;
+		this.simb = simb;
+		this.cor = simb.toLowerCase();
 		this.lin = lin;
 		this.col = col;
 		this.tipo = "peca";
 	}
 	
+
+	String getSimb()
+	{
+		return simb;
+	}
 	
+
 	String getCor()
 	{
 		return cor;

@@ -2,9 +2,9 @@ package mc322.lab05b;
 
 public class Peao extends Peca
 {	
-	Peao(String cor, int lin, int col)
+	Peao(String simb, int lin, int col)
 	{	
-		super(cor, lin, col);		
+		super(simb, lin, col);		
 		tipo = "peao";		
 	}
 	

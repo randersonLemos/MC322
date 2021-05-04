@@ -58,12 +58,13 @@ public class Tabuleiro {
 		
 		if(verificaConsistenciaMovimento(linI, colI, linF, colF, movimento))
 		{
-			String trajeto = levantaTrajeto(linI, colI, linF, colF); 
+			String trajeto = levantaTrajeto(linI, colI, linF, colF);
 					
 			Peca peca = matrix[linI][colI];				
 		
-			if(peca.tentaMovimento(minimizaTrajeto(trajeto), linF, colF))
-			{
+			if(   (peca.getTipo() == "peao" && peca.tentaMovimento(trajeto, linF, colF)) 
+			   || (peca.getTipo() == "dama" && peca.tentaMovimento(minimizaTrajeto(trajeto), linF, colF)) )
+		   {
 				source = "Source: " + movimento.charAt(0) + movimento.charAt(1);
 				target = "Target: " + movimento.charAt(3) + movimento.charAt(4);
 				
@@ -89,11 +90,11 @@ public class Tabuleiro {
 				matrix[linI][colI] = null;
 				matrix[linF][colF] = peca;
 				
-				if(peca.getCor().equals("b") && linF == 0) 
+				if(peca.getSimb().equals("b") && linF == 0) 
 				{
 					matrix[linF][colF] = new Dama("B", linF, colF);
 				}
-				else if(peca.getCor().equals("p") && linF == 7)
+				else if(peca.getSimb().equals("p") && linF == 7)
 				{
 					matrix[linF][colF] = new Dama("P", linF, colF);
 				}								
