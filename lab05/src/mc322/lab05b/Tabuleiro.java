@@ -63,7 +63,7 @@ public class Tabuleiro {
 			Peca peca = matrix[linI][colI];				
 		
 			if(   (peca.getTipo() == "peao" && peca.tentaMovimento(trajeto, linF, colF)) 
-			   || (peca.getTipo() == "dama" && peca.tentaMovimento(minimizaTrajeto(trajeto), linF, colF)) )
+			   || (peca.getTipo() == "dama" && peca.tentaMovimento(minimizarTrajeto(trajeto), linF, colF)) )
 		   {
 				source = "Source: " + movimento.charAt(0) + movimento.charAt(1);
 				target = "Target: " + movimento.charAt(3) + movimento.charAt(4);
@@ -242,7 +242,7 @@ public class Tabuleiro {
 	}
 	
 	
-	public String minimizaTrajeto(String trajeto) {
+	public String minimizarTrajeto(String trajeto) {
 		String auxT = trajeto; //string auxiliar de trajeto
 	    String auxTI = "";     //substring inicial de auxT
 	    String auxTF = "";     //substring inicial de auxT
@@ -293,7 +293,7 @@ public class Tabuleiro {
 	{
 		String estados = "";
 		
-		estados = imprimiCabecalho(estados);
+		estados = imprimirCabecalho(estados);
 		
 		for(int i=0; i<maxLin+1; i++)
 		{
@@ -327,7 +327,7 @@ public class Tabuleiro {
 	}
 
 	
-	String imprimiCabecalho(String estados)
+	String imprimirCabecalho(String estados)
 	{
 		estados += source + "\n";
 		
